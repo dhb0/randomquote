@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator - JS Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="randomquote.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id='header'>Random Quote Generator</h1>
+        <div id="quote">
+            <h2 id='justquote'>
+
+            </h2>
+            <h3 id="nameOf">
+
+            </h3>
+        </div>
+
+        <input type="button" onclick='generate()' value="Generate Another Quote">
+
+    </div>
+
+<script>
+    var quotePool = [
+        ['Sleep with rockstars...Support the arts', 'Bill Kaulitz'],
+        ['Being a rock star is like being a cult leader you really have to be in your own religion.', 'Courtney Love'],
+        ['A rock star does not age!' , 'Anthony Kiedis'],
+        ['Being a rockstar is the intersection of who you are and who you want to be.' , 'Slash'],
+        ['If you act like a rock star, you will be treated like one', 'Marilyn Manson']
+    ];
+
+    function generate(){
+
+        var x = Math.floor(Math.random() * (quotePool.length - 0) ) + 0;
+
+        document.getElementById('justquote').innerHTML = `"${quotePool[x][0]}"`;
+        document.getElementById('nameOf').innerHTML = `--${quotePool[x][1]}`;
+        
+    }
+
+    window.onload=function(){
+        generate()
+    }
+
+</script>
+</body>
+</html>
